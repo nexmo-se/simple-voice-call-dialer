@@ -1,0 +1,36 @@
+{
+  "name": "Simple Voice Call Dialer",
+  "description": "A simple voice call dialer",
+  "repository": "https://github.com/nexmo-se/simple-voice-call-dialer",
+  "logo": "https://node-js-sample.herokuapp.com/node.png",
+  "env": {
+    "HOST": {
+      "description": "Host of the application, the Heroku App URL. Example: https://APP_NAME.herokuapp.com",
+      "required": true
+    },
+    "API_URL": {
+      "description": "Nexmo Voice API Endpoint",
+      "value": "https://rest.nexmo.com/sms/json"
+    },
+    "API_APPLICATION_ID": {
+      "description": "Nexmo Application ID",
+      "required": true
+    },
+    "API_PRIVATE_KEY": {
+      "description": "Nexmo Application Private Key",
+      "required": true
+    },
+    "CALLER_ID": {
+      "description": "Caller ID used for dialing Voice Call",
+      "required": true
+    },
+    "CPS": {
+      "description": "Call per second. Rate of dialing Voice Calls",
+      "value": "30"
+    },
+    "CSV_SKIP_LINES": {
+      "description": "Number of lines to skip when reading CSV. Useful if there are header lines",
+      "value": "0"
+    }
+  }
+}
