@@ -1,15 +1,3 @@
-const windows1252 = require('windows-1252');
-const utf8 = require('utf8');
-
-const convertToUtf8 = (text) => {
-  if (text == null) {
-    return null;
-  }
-  const encoded = windows1252.encode(text);
-  const decoded = utf8.decode(encoded);
-  return decoded;
-};
-
 const mapRecord = (record) => {
   const mappedRecord = {
     mobileNumber: record[0],
@@ -17,8 +5,8 @@ const mapRecord = (record) => {
   };
 
   for (let i = 1; (i + 1) < record.length; i += 2) {
-    const type = convertToUtf8(record[i]);
-    const value = convertToUtf8(record[i + 1]);
+    const type = record[i];
+    const value = record[i + 1];
 
     if (type === 'stream') {
       // Stream
