@@ -7,6 +7,7 @@ const http = require('http');
 const helmet = require('helmet');
 const multer = require('multer');
 const axios = require('axios');
+const fs = require('fs');
 
 const fileService = require('./services/file');
 const csvService = require('./services/csv');
@@ -32,6 +33,11 @@ const rateLimitAxios = rateLimiterService.newInstance(cps);
 // Always use UTC Timezone
 process.env.TZ = 'Etc/UTC';
 const requestMaxSize = '150mb';
+
+// Ensure existence of report directory
+if (!fs.existsSync('src/report')) {
+  fs.mkdirSync('src/report');
+}
 
 const app = express();
 
