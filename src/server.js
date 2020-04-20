@@ -47,10 +47,10 @@ app.get('/success', (_, res) => res.send('You have successfully deployed the Sim
 
 app.post('/event/:campaignName', (req, res) => {
   const { body: data } = req;
-  const { campaignName } = data;
+  const { campaignName } = req.params;
   const mappedEvent = mapperService.mapEvent(data);
   const csvContent = csvService.toCsv(mappedEvent);
-  fileService.appendContent(`public/${campaignName}.csv`, csvContent);
+  fileService.appendContent(`src/report/${campaignName}.csv`, csvContent);
   res.send('ok');
 });
 
