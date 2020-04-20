@@ -13,13 +13,12 @@ Simple API Request based Voice Call Dialer with the use of CSV
 
 ### Using the application
 1. CSV Template (`mobile_number,voice_name,text_body[,voice_name,text_body]`)
-
-  a. Voice Names can be found under https://developer.nexmo.com/voice/voice-api/guides/text-to-speech
-
-  b. For Streaming, use `stream` for the Voice Name and the public accessible URL for the Text Body.
-
 2. Send the CSV file via `POST` to `{HOST}/upload` with file parameter `file`.
 3. Blaster will start to blast.
+
+Voice Names can be found under https://developer.nexmo.com/voice/voice-api/guides/text-to-speech
+
+For Streaming, use `stream` for the Voice Name and the public accessible URL for the Text Body.
 
 ### Sample CSV
 ```
