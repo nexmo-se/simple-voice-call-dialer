@@ -12,7 +12,7 @@ const mapRecord = (record) => {
       // Stream
       mappedRecord.ncco.push({
         action: 'stream',
-        streamUrl: value,
+        streamUrl: [value],
       });
     } else {
       // Talk
